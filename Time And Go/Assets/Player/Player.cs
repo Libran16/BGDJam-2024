@@ -13,13 +13,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger("Jump");
-            transform.position = (transform.position + new Vector3(0,8,0));
-        }
 
-        else if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             animator.SetTrigger("Jump");
             transform.position = (transform.position + new Vector3(0,0,-8));
@@ -34,7 +29,7 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.W))
         {
             animator.SetTrigger("Jump");
-            transform.position = (transform.position + new Vector3(-8,0,0));
+            transform.position = (transform.position + new Vector3(-8,2,0));
         }
 
     }
