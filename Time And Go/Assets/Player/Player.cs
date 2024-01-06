@@ -32,5 +32,11 @@ public class Player : MonoBehaviour
             transform.position = (transform.position + new Vector3(-8,2,0));
         }
 
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            animator.SetTrigger("Jump");
+            transform.position = (transform.position + new Vector3(8,-2,0));
+        }
+
     }
 }
