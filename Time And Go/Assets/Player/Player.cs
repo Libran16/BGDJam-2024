@@ -16,26 +16,25 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("Left");
             transform.position = (transform.position + new Vector3(0,0,-8));
         }
 
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            animator.SetTrigger("Jump");
+            animator.SetTrigger("Right");
             transform.position = (transform.position + new Vector3(0,0,8));
         }
 
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            animator.SetTrigger("Jump");
             transform.position = (transform.position + new Vector3(-8,2,0));
         }
 
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            animator.SetTrigger("Jump");
-            transform.position = (transform.position + new Vector3(8,-2,0));
+            animator.SetTrigger("Back");
+            transform.position = (transform.position + new Vector3(8,2,0));
         }
 
     }
