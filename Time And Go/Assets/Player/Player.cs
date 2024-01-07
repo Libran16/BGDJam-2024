@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     float _gravitiy;
     private Rigidbody body; 
+    public AudioSource JumpSound;
 
     private void Start()
     {
@@ -21,25 +22,29 @@ public class Player : MonoBehaviour
         {
             animator.SetTrigger("Left");
             transform.position = (transform.position + new Vector3(0,0,-8));
+            JumpSound.Play();
         }
 
         else if (Input.GetKeyDown(KeyCode.D))
         {
             animator.SetTrigger("Right");
             transform.position = (transform.position + new Vector3(0,0,8));
+            JumpSound.Play();
         }
 
         else if (Input.GetKeyDown(KeyCode.W))
         {
             _gravitiy = -9.81f;
-            transform.position = (transform.position + new Vector3(-8,2,0));
+            transform.position = (transform.position + new Vector3(-8,1,0));
+            JumpSound.Play();
         }
 
         else if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetTrigger("Back");
             _gravitiy = -9.81f;
-            transform.position = (transform.position + new Vector3(8,2,0));
+            transform.position = (transform.position + new Vector3(8,1,0));
+            JumpSound.Play();
         }
 
     }

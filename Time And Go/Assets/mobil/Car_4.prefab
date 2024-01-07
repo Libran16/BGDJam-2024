@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdd6d3ce69eeeb41ac217b10d744897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanvasKalah: {fileID: 6474186936135174925, guid: 5de3a8decdabf75459cf75ec04265471, type: 3}
 --- !u!1 &8182458275090465497
 GameObject:
   m_ObjectHideFlags: 0
