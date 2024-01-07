@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Animator animator;
+    float _gravitiy;
+    private Rigidbody body; 
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        body = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -28,14 +31,17 @@ public class Player : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.W))
         {
+            _gravitiy = -9.81f;
             transform.position = (transform.position + new Vector3(-8,2,0));
         }
 
         else if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetTrigger("Back");
+            _gravitiy = -9.81f;
             transform.position = (transform.position + new Vector3(8,2,0));
         }
 
     }
+
 }
