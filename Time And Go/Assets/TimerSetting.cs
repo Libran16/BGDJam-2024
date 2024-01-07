@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimerSetting : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class TimerSetting : MonoBehaviour
     public float Waktu = 100; //01:30
 
     public bool GameAktif = true;
+    public GameObject CanvasKalah;
+    public GameObject PlayerRespawn;
+
+    ScoreManager scoreManager;
 
     void SetText()
     {
@@ -19,7 +24,7 @@ public class TimerSetting : MonoBehaviour
 
     float s;
 
-    private void Update()
+    void Update()
     {
         if (GameAktif)
         {
@@ -34,9 +39,16 @@ public class TimerSetting : MonoBehaviour
         if (GameAktif && Waktu <= 0)
         {
             Debug.Log("Game Kalah");
+            Respawn();
+            CanvasKalah.SetActive(true);
             GameAktif = false;
         }
 
         SetText();
+    }
+
+    public void Respawn()
+    {
+        Destroy(PlayerRespawn);
     }
 }

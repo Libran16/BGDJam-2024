@@ -18,6 +18,7 @@ public class Collactable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             scoreManager.IncreaseScore();
+            scoreManager.HighScore();
             gameObject.SetActive(false);
         }
     }
